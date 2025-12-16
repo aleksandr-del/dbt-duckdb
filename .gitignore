@@ -1,0 +1,9 @@
+.venv/
+.env
+.git/
+jaffle_shop/jaffle_shop/target/
+jaffle_shop/jaffle_shop/dbt_packages/
+jaffle_shop/logs/
+jaffle_shop/jaffle_shop/logs/
+jaffle-shop-data/*.csv
+jaffle_shop/*.duckdb

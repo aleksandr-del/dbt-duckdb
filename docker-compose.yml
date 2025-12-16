@@ -1,0 +1,38 @@
+x-logging: &logging
+  driver: "json-file"
+  options:
+    max-size: 10m
+    max-file: 3
+    compress: "true"
+
+x-labels: &labels
+  - "project=jaffle_shop"
+  - "environment=dev"
+
+services:
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: local/dbt-duckdb:custom
+    container_name: dbt
+    env_file:
+      - .env
+    volumes:
+      - ${DBT_HOST_PROJECT_DIR}:${DBT_WORKDIR}
+      - ${DBT_HOST_PROFILES_FILE}:/root/.dbt/profiles.yml
+    working_dir: ${DBT_WORKDIR}
+    networks:
+      - dbt-network
+    ports:
+      - "${DBT_SERVER_PORT}:${DBT_SERVER_PORT}"
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["tail -f /dev/null"]
+    logging:
+      <<: *logging
+    labels: *labels
+
+networks:
+  dbt-network:
+    name: dbt-network
+    driver: bridge
