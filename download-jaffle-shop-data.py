@@ -14,7 +14,7 @@ def main() -> None:
     )
     logger = logging.getLogger(__name__)
 
-    dir_name = "jaffle-data"
+    dir_name = "jaffle-shop-data"
     os.makedirs(dir_name, exist_ok=True)
 
     url = "https://api.github.com/repos/dbt-labs/jaffle-shop/contents/seeds/jaffle-data"
