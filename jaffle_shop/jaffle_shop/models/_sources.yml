@@ -1,0 +1,69 @@
+version: 2
+
+sources:
+  - name: raw
+    database: dbt
+    schema: raw
+    tables:
+      - name: orders
+        columns:
+          - name: orderid
+            data_type: bigint
+          - name: customerid
+            data_type: bigint
+          - name: salesperson
+            data_type: varchar
+          - name: orderplacedtimestamp
+            data_type: timestamp with time zone
+          - name: orderstatus
+            data_type: varchar
+          - name: updatedat
+            data_type: timestamp with time zone
+
+      - name: customers
+        columns:
+          - name: customerid
+            data_type: bigint
+          - name: name
+            data_type: varchar
+          - name: phone
+            data_type: varchar
+          - name: email
+            data_type: varchar
+          - name: address
+            data_type: varchar
+          - name: region
+            data_type: varchar
+          - name: postalzip
+            data_type: varchar
+          - name: country
+            data_type: varchar
+          - name: createdat
+            data_type: timestamp with time zone
+          - name: updatedat
+            data_type: timestamp with time zone
+
+      - name: products
+        columns:
+          - name: productid
+            data_type: bigint
+          - name: product
+            data_type: varchar
+          - name: price
+            data_type: double
+          - name: department
+            data_type: varchar
+          - name: createdat
+            data_type: timestamp with time zone
+          - name: updatedat
+            data_type: timestamp with time zone
+
+      - name: orderitems
+        columns:
+          - name: orderitemsid
+            data_type: bigint
+          - name: orderid
+            data_type: bigint
+          - name: productid
+            data_type: bigint
+

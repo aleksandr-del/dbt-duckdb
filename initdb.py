@@ -18,7 +18,7 @@ def main() -> None:
     logger.info("Connected to dbt.db ...")
     conn.execute(f"CREATE SCHEMA IF NOT EXISTS {schema_name}")
     logger.info(f"Created schema {schema_name}")
-    data_dir = Path("jaffle-shop-data")
+    data_dir = Path("raw-data")
 
     for csv_file in data_dir.glob("*.csv"):
         table_name = csv_file.stem.split("_")[1]

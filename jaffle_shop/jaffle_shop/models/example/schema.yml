@@ -19,3 +19,26 @@ models:
         data_tests:
           - unique
           - not_null
+
+  - name: my_third_dbt_model
+    description: "A starter dbt model that references the sources"
+    columns:
+      - name: orderid
+        description: "The unique order identificator"
+        data_type: integer
+      - name: total_items
+        description: "The total number of items purchased"
+        data_type: integer
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">=1"
+      - name: total_sum
+        description: "The total sum of the order"
+        data_type: float
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">=1000"
