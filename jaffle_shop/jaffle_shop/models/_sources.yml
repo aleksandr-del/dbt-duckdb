@@ -6,11 +6,28 @@ sources:
     schema: raw
     tables:
       - name: orders
+        freshness:
+          warn_after:
+            count: 500
+            period: day
+          error_after:
+            count: 1000
+            period: day
+        loaded_at_field: updatedat
         columns:
           - name: orderid
             data_type: bigint
+            data_tests:
+              - not_null
+              - unique
           - name: customerid
             data_type: bigint
+            data_tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    field: customerid
+                    to: source("raw", "customers")
           - name: salesperson
             data_type: varchar
           - name: orderplacedtimestamp
