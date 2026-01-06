@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: stg_furniture_mart_products
+    description: ""
+    columns:
+      - name: productid
+        data_type: bigint
+        description: ""
+
+      - name: product
+        data_type: varchar
+        description: ""
+
+      - name: price
+        data_type: double
+        description: ""
+
+      - name: department
+        data_type: varchar
+        description: ""
+
+      - name: createdat
+        data_type: timestamp with time zone
+        description: ""
+
+      - name: updatedat
+        data_type: timestamp with time zone
+        description: ""
+
+  - name: stg_furniture_mart_orders
+    description: ""
+    columns:
+      - name: orderid
+        data_type: bigint
+        description: ""
+
+      - name: customerid
+        data_type: bigint
+        description: ""
+
+      - name: salesperson
+        data_type: varchar
+        description: ""
+
+      - name: orderplacedtimestamp
+        data_type: timestamp
+        description: ""
+
+      - name: orderstatus
+        data_type: varchar
+        description: ""
+
+      - name: updatedat
+        data_type: timestamp
+        description: ""
+
+  - name: stg_furniture_mart_orderitems
+    description: ""
+    columns:
+      - name: orderitemsid
+        data_type: bigint
+        description: ""
+
+      - name: orderid
+        data_type: bigint
+        description: ""
+
+      - name: productid
+        data_type: bigint
+        description: ""
+

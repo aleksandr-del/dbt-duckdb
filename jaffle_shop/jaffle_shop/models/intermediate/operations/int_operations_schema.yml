@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_orders_items_products_joined
+    description: ""
+    columns:
+      - name: orderitemsid
+        data_type: bigint
+        description: ""
+
+      - name: orderid
+        data_type: bigint
+        description: ""
+
+      - name: product
+        data_type: varchar
+        description: ""
+
+      - name: department
+        data_type: varchar
+        description: ""
+
+      - name: price
+        data_type: double
+        description: ""
+
