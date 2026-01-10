@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: fct_revenue_orders
+    description: ""
+    columns:
+      - name: orderid
+        data_type: bigint
+        description: ""
+
+      - name: orderplacedtimestamp
+        data_type: timestamp
+        description: ""
+
+      - name: updatedat
+        data_type: timestamp
+        description: ""
+
+      - name: orderstatus
+        data_type: varchar
+        description: ""
+
+      - name: salesperson
+        data_type: varchar
+        description: ""
+
+      - name: revenue
+        data_type: decimal(10,2)
+        description: ""
+
+  - name: fct_revenue_orders_append
+    description: ""
+    columns:
+      - name: orderid
+        data_type: bigint
+        description: ""
+        data_tests:
+          - not_null
+          - unique
+
+      - name: orderplacedtimestamp
+        data_type: timestamp
+        description: ""
+
+      - name: updatedat
+        data_type: timestamp
+        description: ""
+
+      - name: orderstatus
+        data_type: varchar
+        description: ""
+
+      - name: salesperson
+        data_type: varchar
+        description: ""
+
+      - name: revenue
+        data_type: decimal(10,2)
+        description: ""
