@@ -8,8 +8,8 @@
 
 WITH cte AS (
     SELECT
-    pro.OrderId,
-    sum(pro.Price)::numeric(10, 2) as Revenue
+        pro.OrderId,
+        sum(pro.Price)::numeric(10, 2) as Revenue
     FROM {{ ref('int_orders_items_products_joined') }} AS pro
     GROUP BY 1
 )
