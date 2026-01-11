@@ -57,3 +57,41 @@ models:
       - name: revenue
         data_type: decimal(10,2)
         description: ""
+
+  - name: fct_revenue_orders_python
+    description: ""
+    columns:
+      - name: orderid
+        data_type: bigint
+        description: ""
+
+      - name: orderplacedtimestamp
+        data_type: timestamp
+        description: ""
+
+      - name: updatedat
+        data_type: timestamp
+        description: ""
+
+      - name: orderstatus
+        data_type: varchar
+        description: ""
+
+      - name: salesperson
+        data_type: varchar
+        description: ""
+
+      - name: revenue
+        data_type: double
+        description: ""
+
+  - name: fct_revenue_orders_pure_python
+    description: ""
+    columns:
+      - name: orderid
+        data_type: integer
+        description: ""
+
+      - name: revenue
+        data_type: decimal(7,2)
+        description: ""
