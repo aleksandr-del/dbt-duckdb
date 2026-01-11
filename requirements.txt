@@ -1,6 +1,14 @@
+basedpyright==1.37.1
 certifi==2025.11.12
 charset-normalizer==3.4.4
+click==8.1.8
 duckdb==1.4.3
 idna==3.11
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+nodejs-wheel-binaries==24.12.0
+platformdirs==4.5.1
 requests==2.32.5
+ruff==0.14.11
+tqdm==4.67.1
 urllib3==2.6.2
