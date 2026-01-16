@@ -1,7 +1,12 @@
 version: 2
 
+x-config-common: &config-common
+  tags: ["mart", "finance"]
+
 models:
   - name: fct_revenue_orders
+    config:
+      <<: *config-common
     description: ""
     columns:
       - name: orderid
@@ -29,6 +34,8 @@ models:
         description: ""
 
   - name: fct_revenue_orders_append
+    config:
+      <<: *config-common
     description: ""
     columns:
       - name: orderid
@@ -59,6 +66,8 @@ models:
         description: ""
 
   - name: fct_revenue_orders_python
+    config:
+      <<: *config-common
     description: ""
     columns:
       - name: orderid
@@ -86,6 +95,8 @@ models:
         description: ""
 
   - name: fct_revenue_orders_pure_python
+    config:
+      <<: *config-common
     description: ""
     columns:
       - name: orderid
