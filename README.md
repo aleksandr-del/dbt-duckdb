@@ -285,3 +285,8 @@ docker exec -it dbt dbt compile --select model_name --project-dir /usr/app/jaffl
 6. `docker exec -it dbt dbt run --project-dir /usr/app/jaffle_shop` - Run models
 7. `docker exec -it dbt dbt test --project-dir /usr/app/jaffle_shop` - Test quality
 8. `docker exec -d dbt dbt docs serve --project-dir /usr/app/jaffle_shop --host 0.0.0.0` - View docs
+
+
+## Data Lineage
+
+![dbt Lineage Graph](dbt-dag.png)
