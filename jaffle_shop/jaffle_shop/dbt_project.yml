@@ -35,7 +35,12 @@ models:
       +schema: example
     staging:
       +materialized: view
+      crm:
+      furniture_mart:
     intermediate:
       +materialized: table
+      operations:
     marts:
       +materialized: table
+      finance:
+      operations:

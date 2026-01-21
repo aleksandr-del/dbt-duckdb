@@ -61,4 +61,7 @@
     'How many whitespaces will this loop leave?'
 {%- endfor %}
 
-{{ phone_number_formatter('1-394-354-2456') }}
+{#- Macros #}
+{% for status in get_order_statuses() %}
+    {{ status }}
+{% endfor %}
