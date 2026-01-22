@@ -44,3 +44,8 @@ models:
       +materialized: table
       finance:
       operations:
+
+quoting:
+  database: false
+  schema: false
+  identifier: false

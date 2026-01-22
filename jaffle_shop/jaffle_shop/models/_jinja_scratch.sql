@@ -65,3 +65,28 @@
 {% for status in get_order_statuses() %}
     {{ status }}
 {% endfor %}
+
+{#- dbt functions #}
+{%- for key, value in target.items() %}
+    {{ key }}: {{ value }}
+{%- endfor %}
+
+{{ this }}
+
+{{ log('invocation_id: ' ~ invocation_id, info=True) }}
+
+{%- set columns = adapter.get_columns_in_relation(ref('stg_crm_customers')) %}
+{%- for column in columns %}
+    Column: {{ column.name }}, {{ column.dtype }}
+{%- endfor %}
+
+CREATE TABLE IF NOT EXISTS my_table AS (
+    {%- for column in columns %}
+    {{ column.column }} {{ column.dtype }}{% if not loop.last %},{% endif %}
+    {%- endfor %}
+)
+
+{%- set statuses = dbt_utils.get_column_values(table=ref('fct_revenue_orders_python'), column='OrderStatus') %}
+{%- if  statuses is not none %}
+    {{ statuses }}
+{%- endif %}

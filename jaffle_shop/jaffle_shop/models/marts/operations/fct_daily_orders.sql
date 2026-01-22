@@ -1,4 +1,8 @@
-{%- set statuses = ['placed', 'shipped', 'returned'] %}
+{%- set statuses = dbt_utils.get_column_values(
+    table=ref('fct_revenue_orders_python'),
+    column='OrderStatus'
+    )
+%}
 
 SELECT
     CAST(OrderPlacedTimestamp AS date) AS OrderDate,
