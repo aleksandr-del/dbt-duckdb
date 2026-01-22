@@ -90,3 +90,11 @@ CREATE TABLE IF NOT EXISTS my_table AS (
 {%- if  statuses is not none %}
     {{ statuses }}
 {%- endif %}
+
+{#- dbt Packages #}
+{{ dbt_utils.date_spine(
+    datepart="day",
+    start_date="'2026-01-01'::date",
+    end_date="'2026-01-12'::date"
+    )
+}}

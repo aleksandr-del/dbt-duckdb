@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fct_daily_orders
+    description: ""
+    columns:
+      - name: orderdate
+        data_type: date
+        description: ""
+
+      - name: totalordersshipped
+        data_type: bigint
+        description: ""
+
+      - name: totalordersplaced
+        data_type: bigint
+        description: ""
+
+      - name: totalordersreturned
+        data_type: bigint
+        description: ""
+

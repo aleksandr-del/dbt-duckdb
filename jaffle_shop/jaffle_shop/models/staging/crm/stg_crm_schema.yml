@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_crm_customers
+    description: ""
+    columns:
+      - name: customerid
+        data_type: bigint
+        description: ""
+
+      - name: firstname
+        data_type: varchar
+        description: ""
+
+      - name: lastname
+        data_type: varchar
+        description: ""
+
+      - name: phonenumber
+        data_type: varchar
+        description: ""
+
+      - name: emailaddress
+        data_type: varchar
+        description: ""
+
+      - name: address
+        data_type: varchar
+        description: ""
+
+      - name: region
+        data_type: varchar
+        description: ""
+
+      - name: postalzip
+        data_type: varchar
+        description: ""
+
+      - name: country
+        data_type: varchar
+        description: ""
+
