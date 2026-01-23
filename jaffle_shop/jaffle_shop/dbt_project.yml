@@ -6,6 +6,7 @@ version: "1.0.0"
 
 # This setting configures which "profile" dbt uses for this project.
 profile: "jaffle_shop"
+on-run-start: ["{{ create_logs_table('logs', 'dbt_logs') }}"]
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -35,13 +36,16 @@ models:
       +schema: example
     staging:
       +materialized: view
+      +schema: analytics
       crm:
       furniture_mart:
     intermediate:
       +materialized: table
+      +schema: analytics
       operations:
     marts:
       +materialized: table
+      +schema: analytics
       finance:
       operations:
 

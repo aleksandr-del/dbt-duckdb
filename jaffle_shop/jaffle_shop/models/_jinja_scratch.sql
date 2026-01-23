@@ -98,3 +98,13 @@ CREATE TABLE IF NOT EXISTS my_table AS (
     end_date="'2026-01-12'::date"
     )
 }}
+
+{% set flag = if_schema_exists('snapshots') %}
+{{ flag }}
+{%- if flag %}
+    Hello!
+{%- else %}
+    Bye!
+{%- endif %}
+
+{{ create_logs_table('logs', 'dbt_logs') }}
