@@ -6,8 +6,14 @@ version: "1.0.0"
 
 # This setting configures which "profile" dbt uses for this project.
 profile: "jaffle_shop"
-on-run-start: ["{{ create_logs_table('logs', 'dbt_logs') }}"]
-on-run-end: ["{{ insert_log_records('logs', 'dbt_logs') }}"]
+on-run-start:
+  [
+    "{% if target.name == 'dev' %} {{ create_logs_table('logs', 'dbt_logs') }} {% endif %}",
+  ]
+on-run-end:
+  [
+    "{% if target.name == 'dev' %} {{ insert_log_records('logs', 'dbt_logs') }} {% endif %}",
+  ]
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
