@@ -64,8 +64,13 @@ sources:
         columns:
           - name: productid
             data_type: bigint
+            data_tests:
+              - unique
+              - not_null
           - name: product
             data_type: varchar
+            data_tests:
+              - not_null
           - name: price
             data_type: double
             data_tests:
@@ -74,6 +79,8 @@ sources:
                     value: 0
           - name: department
             data_type: varchar
+            data_tests:
+              - not_null
           - name: createdat
             data_type: timestamp with time zone
           - name: updatedat
@@ -85,5 +92,15 @@ sources:
             data_type: bigint
           - name: orderid
             data_type: bigint
+            data_tests:
+              - relationships:
+                  arguments:
+                    to: source("raw", "orders")
+                    field: orderid
           - name: productid
             data_type: bigint
+            data_tests:
+              - relationships:
+                  arguments:
+                    to: source("raw", "products")
+                    field: productid

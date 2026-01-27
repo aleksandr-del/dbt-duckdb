@@ -50,6 +50,10 @@ models:
       - name: orderstatus
         data_type: varchar
         description: ""
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: '{{ "placed shipped returned".split() }}'
 
       - name: updatedat
         data_type: timestamp
@@ -69,4 +73,3 @@ models:
       - name: productid
         data_type: bigint
         description: ""
-
