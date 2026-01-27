@@ -68,6 +68,10 @@ sources:
             data_type: varchar
           - name: price
             data_type: double
+            data_tests:
+              - is_greater:
+                  arguments:
+                    value: 0
           - name: department
             data_type: varchar
           - name: createdat
@@ -83,4 +87,3 @@ sources:
             data_type: bigint
           - name: productid
             data_type: bigint
-
